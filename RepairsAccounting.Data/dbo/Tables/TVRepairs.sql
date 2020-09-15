@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[TVRepairs]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [RepairDate] DATETIME2 NOT NULL, 
+    [RepairCost] NVARCHAR(100) NOT NULL, 
+    [RepairCompany] NVARCHAR(100) NOT NULL, 
+    [Comment] NVARCHAR(100) NULL, 
+    [TVId] INT NOT NULL, 
+    CONSTRAINT [FK_TVRepairs_ToTVs] FOREIGN KEY ([TVId]) REFERENCES [TVs]([Id]) 
+)
